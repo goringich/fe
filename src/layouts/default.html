@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head }}
+</head>
+<body>
+
+    <div class="container">
+        {{> header }}
+        <!-- <div class="history__title"> -->
+            <h1 class="gradient-text">Наша великая история</h1>
+        <!-- </div> -->
+    </div>
+    <main class="main">
+        <div class="container container--flex">
+            {{> sidebar }}
+            <div class="inner">
+                {{> body }}
+            </div>
+            {{> sidebar-right }}
+        </div>
+        {{> footer }}
+    </main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

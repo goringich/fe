@@ -1,0 +1,354 @@
+@import "vars";
+
+
+.history__title{
+    text-align: center;
+}
+
+.gradient-text {
+    font-size: 50*$rem;
+    text-transform: uppercase;
+    
+    /* Create the gradient. */
+    background: linear-gradient(-90deg, rgba(131,58,180,1) 0%, rgba(255,38,38,1) 25%, rgba(131,58,180,1) 50%,  rgba(255,38,38,1) 75%, rgba(131,58,180,1) 100%);
+    
+    /* Set the background size and repeat properties. */
+    // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 150% 150%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    animation: rainbow-text-simple-animation-rev 2s linear infinite;
+}
+
+
+@keyframes rainbow-text-simple-animation-rev {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 50%;
+	}
+    75% {
+		background-position: 100% 50%;
+	}
+    100% {
+		background-position: 0% 50%;
+	}
+}
+
+body {
+    background-color: white;
+    font-size: 13*$rem;
+    // color:black;
+    font-family: verdana,arial,helvetica;
+    // font-size: 10pt;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    // text-shadow: 1*$rem 1*$rem black;
+    margin-top: 0 !important;
+    font-size: 25*$rem;
+    font-weight: 600;
+}
+
+h2{
+    text-shadow: 1*$rem 1*$rem black;
+    font-weight: 400;
+    font-size: 20*$rem;
+}
+
+ul,li{
+    list-style: none !important;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+header{
+    position: relative;
+    max-width: 1100*$rem;
+    width: 100%;
+    margin: 0 0 0 6%;
+    display: flex;
+}
+
+.name{
+    position: absolute;
+    top: 20*$rem;
+    left: 60*$rem;
+}
+
+.container{
+    position: relative;
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    &--flex{
+        display: flex;
+    }
+}
+
+.header_img{
+    object-fit: cover;
+    // margin-top: -100*$rem;
+    margin-bottom: 20*$rem;
+
+    &--1{
+        // position: relative;
+        width: 1024*$rem;
+        // transform: translateY(-35%);
+        // top: -35%;
+
+    }
+    &--2{
+        width: 12.84rem;
+    }
+}
+
+
+
+
+/* section24 */
+.section24{
+    padding: 50*$rem 0 65*$rem ;
+    min-height: 45vh;
+    box-sizing: border-box;
+    background-color: $white;
+      
+    &__inner{
+        @include wh1;
+        transform-style: preserve-3d;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.images__box2{
+    position: relative;
+    width: 14.84rem;
+    height: 9.84rem;
+    transform-style: preserve-3d;
+    transform: perspective(250rem) rotateY(0deg);
+}
+
+.img__3d-t{
+    @include a0011;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--t) * 45deg)) translateZ(20rem);
+
+    img{
+        height: 8.56rem !important;
+        -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #000);
+        width: 100% !important;
+    }
+}
+
+.images__box2__text{
+    @include a55;
+    z-index: 1;
+    transform: translate(-50%);
+    perspective-origin: center;
+    color: #ffe0e0;
+    text-shadow: 0.314rem 0.314rem #ff0808;
+    font-weight: 600;
+    font-size: 50*$rem;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+}
+
+
+
+.style__img{
+    width: 50%;
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+
+    img{
+        @include a0011;
+        object-fit: cover;
+
+        &:nth-child(1){
+            filter: grayscale(1) contrast(5);
+            transition: all .1s linear;
+        }
+        
+        &:nth-child(2){
+            filter: grayscale(1) contrast(1) brightness(.5);
+            mix-blend-mode: hard-light;
+            transition: all .5s linear;
+        }
+        
+        &:hover{
+            filter: none !important;
+            mix-blend-mode: unset !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.sidebar{
+    // position: absolute;
+    // margin-top: 48*$rem;
+    left: 0;
+    padding: 5*$rem;
+    // 280*x = 324
+    min-width: 230*$rem;
+    max-height: 100%;
+    height: 100%;
+    color: #7d7d7d;
+    
+    &--right{
+        width: 400*$rem;
+    }
+}
+
+.r_f_i{
+    text-align: left !important;
+    border-radius: 5%;
+
+    &__inner{
+        padding: 7*$rem;
+    }
+
+    &__right{
+
+        img{
+            margin-top: 5*$rem;
+        }
+    }
+
+    &__title{
+        font-weight: 700;
+    }
+
+    &__text{
+        text-transform: none;
+        padding-top: 10*$rem;
+        font-size: 12*$rem;
+    }
+
+    &__date{
+        padding-left: .5rem;
+    }
+}
+
+
+
+.link__first{
+    width: 100%;
+    padding-left: 0 !important;
+
+    li{
+        cursor: pointer;
+        margin-bottom: 5*$rem;
+        box-shadow: 7*$rem 5*$rem 5*$rem rgb(194, 194, 194);
+        font-size: 13.5*$rem;
+        text-transform: uppercase;
+        font-weight: normal;
+        border: $rem solid #DDDDDD;
+        background: linear-gradient(0deg, rgb(199, 199, 199) 0%, rgb(233, 233, 233) 100%);
+        text-align: center;
+        padding: 6*$rem 5*$rem;
+        transition: transform .1s linear;
+
+        a{
+            color: #7d7d7d;
+            text-decoration: none;
+        }
+
+        &:hover{
+            transform: scale(1.03);
+
+            a{
+                text-decoration: underline;
+                color: black
+            }
+        } 
+
+        &.active{
+            a{
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.inner{
+    padding: 20*$rem 30*$rem 0;
+    width: 100%;
+    height: 100%;
+
+    p{
+        text-align: left;
+    }
+
+    img{
+        display: inline !important;
+        margin: 10*$rem 0 15*$rem;
+        width: 500*$rem;
+    }
+
+    &__title{
+        text-align: center;
+    }
+    
+    &__subtitle{
+        text-align: left;
+    }
+}
+
+.sidebarPage{
+    &__inner{
+        p{
+            text-indent: 1rem;
+        }
+
+        &__img{
+            text-align: center;
+
+            img{
+                margin: 5$rem auto;
+            }
+        }
+
+        text-align: left;
+    }
+    &__title{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+footer{
+    margin-top: 50*$rem;
+    border-top: 3*$rem solid #000;
+    padding: 5*$rem;
+    text-align: center;
+}
